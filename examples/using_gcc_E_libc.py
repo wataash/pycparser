@@ -19,6 +19,9 @@ from pycparser import parse_file
 
 
 if __name__ == "__main__":
+    # https://github.com/eliben/pycparser
+    # 3.1   Interaction with the C preprocessor
+    sys.argv.append('c_files/memmgr.h')
     if len(sys.argv) > 1:
         filename  = sys.argv[1]
     else:
@@ -26,5 +29,6 @@ if __name__ == "__main__":
 
     ast = parse_file(filename, use_cpp=True,
             cpp_path='gcc',
-            cpp_args=['-E', r'-Iutils/fake_libc_include'])
+            # cpp_args=['-E', r'-Iutils/fake_libc_include'])
+            cpp_args=['-E'])
     ast.show()

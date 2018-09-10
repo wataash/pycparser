@@ -193,6 +193,7 @@ def from_json(ast_json):
 
 #------------------------------------------------------------------------------
 if __name__ == "__main__":
+    sys.argv.append('c_files/funky.c')
     if len(sys.argv) > 1:
         # Some test code...
         # Do trip from C -> ast -> dict -> ast -> json, then print.

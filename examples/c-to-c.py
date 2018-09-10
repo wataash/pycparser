@@ -55,6 +55,8 @@ int main(void)
 
 #------------------------------------------------------------------------------
 if __name__ == "__main__":
+    translate_to_c('c_files/funky.c')
+    # translate_to_c('c_files/memmgr.h')  # error (see using_gcc_E_libc.py)
     #_zz_test_translate()
     if len(sys.argv) > 1:
         translate_to_c(sys.argv[1])
